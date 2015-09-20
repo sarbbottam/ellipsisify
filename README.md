@@ -15,6 +15,8 @@ NodeJS
 ```js
 var ellipsisify = require('path/to/ellipsisify');
 console.log(ellipsisify.center('abcdefghij', 8)); // abc...ij
+console.log(ellipsisify.left('abcdefghij', 8)); // ...fghij
+console.log(ellipsisify.right('abcdefghij', 8)); // abcde...
 ```
 
 Browser
@@ -26,6 +28,8 @@ Browser
   ...
   <script>
     console.log(ellipsisify.center('abcdefghij', 8)); // abc...ij
+    console.log(ellipsisify.left('abcdefghij', 8)); // ...fghij
+    console.log(ellipsisify.right('abcdefghij', 8)); // abcde...
   </script>
 </html>
 ```
@@ -36,5 +40,7 @@ Browser
 
 ```js
 ellipsisify.center(string, threshold);
+ellipsisify.left(string, threshold);
+ellipsisify.right(string, threshold);
 ```
 
