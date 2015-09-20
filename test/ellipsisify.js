@@ -18,10 +18,11 @@ describe('ellipsisify', function() {
     actualResult = '';
   });
 
-  it('should return an object with center and left method', function() {
+  it('should return an object with center, left and right method', function() {
     assert.isObject(ellipsisify);
     assert.isFunction(ellipsisify.center);
     assert.isFunction(ellipsisify.left);
+    assert.isFunction(ellipsisify.right);
   });
 
   it('should not ellipsisify if threshold is more than the string length', function() {
@@ -31,6 +32,8 @@ describe('ellipsisify', function() {
     actualResult = ellipsisify.center(string, threshold);
     assert.equal(expectedResult, actualResult);
     actualResult = ellipsisify.left(string, threshold);
+    assert.equal(expectedResult, actualResult);
+    actualResult = ellipsisify.right(string, threshold);
     assert.equal(expectedResult, actualResult);
   });
 
@@ -42,6 +45,8 @@ describe('ellipsisify', function() {
     assert.equal(expectedResult, actualResult);
     actualResult = ellipsisify.left(string, threshold);
     assert.equal(expectedResult, actualResult);
+    actualResult = ellipsisify.right(string, threshold);
+    assert.equal(expectedResult, actualResult);
   });
 
   it('should return empty string, if no string is provided', function() {
@@ -50,6 +55,8 @@ describe('ellipsisify', function() {
     actualResult = ellipsisify.center(string, threshold);
     assert.equal(expectedResult, actualResult);
     actualResult = ellipsisify.left(string, threshold);
+    assert.equal(expectedResult, actualResult);
+    actualResult = ellipsisify.right(string, threshold);
     assert.equal(expectedResult, actualResult);
   });
 
@@ -118,6 +125,41 @@ describe('ellipsisify', function() {
     expectedResult = 'minimum threshold should be 4';
     try {
       actualResult = ellipsisify.left(string, threshold);
+    } catch (e) {
+      assert.equal(expectedResult, e.message);
+    }
+  });
+
+  it('should right ellipsisify \'abcdefghij\' to \'abcde...\' with threshold 8', function() {
+    string = 'abcdefghij';
+    threshold = 8;
+    expectedResult = 'abcde...';
+    actualResult = ellipsisify.right(string, threshold);
+    assert.equal(expectedResult, actualResult);
+  });
+
+  it('should right ellipsisify \'abcdefghij\' to \'abc...\' with threshold 6', function() {
+    string = 'abcdefghij';
+    threshold = 6;
+    expectedResult = 'abc...';
+    actualResult = ellipsisify.right(string, threshold);
+    assert.equal(expectedResult, actualResult);
+  });
+
+  it('should right ellipsisify \'abcdefghij\' to \'ab...\' with threshold 5', function() {
+    string = 'abcdefghij';
+    threshold = 5;
+    expectedResult = 'ab...';
+    actualResult = ellipsisify.right(string, threshold);
+    assert.equal(expectedResult, actualResult);
+  });
+
+  it('should throw error if threshold is less than 4 for ellipsisify.right', function() {
+    string = 'abcdefghij';
+    threshold = 3;
+    expectedResult = 'minimum threshold should be 4';
+    try {
+      actualResult = ellipsisify.right(string, threshold);
     } catch (e) {
       assert.equal(expectedResult, e.message);
     }

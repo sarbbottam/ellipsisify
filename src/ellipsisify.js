@@ -2,6 +2,7 @@
 
 var MIN_THRESHOLD_CENTER = 5;
 var MIN_THRESHOLD_LEFT = 4;
+var MIN_THRESHOLD_RIGHT = 4;
 
 var ellipsisify;
 
@@ -48,9 +49,30 @@ function left(string, threshold) {
   return ['...',  string.substring(length - (threshold - 3), length)].join('');
 }
 
+function right(string, threshold) {
+  var length;
+
+  if (!string) {
+    return '';
+  }
+
+  length = string.length;
+
+  if (!threshold || threshold >= length) {
+    return string;
+  }
+
+  if (threshold < MIN_THRESHOLD_RIGHT) {
+    throw { message: 'minimum threshold should be ' + MIN_THRESHOLD_RIGHT };
+  }
+
+  return [string.substring(0, threshold - 3), '...'].join('');
+}
+
 ellipsisify = {
   center: center,
-  left: left
+  left: left,
+  right: right
 };
 
 /* istanbul ignore next */
