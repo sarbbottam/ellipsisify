@@ -1,6 +1,6 @@
 {
   "name": "ellipsisify",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "lint": "eslint ./src/*.js ./test/*.js",
     "unit-test": "istanbul cover _mocha -- test/*.js -R spec",
