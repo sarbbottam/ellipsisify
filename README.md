@@ -6,7 +6,7 @@ ellipsisify
 
 ## Demo:
 
-Please refer this [pen](http://codepen.io/sarbbottam/pen/XmKbZr?editors=001) to see it in action or to play around.
+Please refer this [pen](http://codepen.io/sarbbottam/full/XmKbZr/) to see it in action or to play around.
 
 ## Usage:
 
