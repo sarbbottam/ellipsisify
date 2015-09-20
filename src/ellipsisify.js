@@ -25,8 +25,29 @@ function center(string, threshold) {
   return [string.substring(0, mid - 1), '...',  string.substring(length - (mid + 1) + 3, length)].join('');
 }
 
+function left(string, threshold) {
+  var length;
+
+  if (!string) {
+    return '';
+  }
+
+  length = string.length;
+
+  if (!threshold || threshold >= length) {
+    return string;
+  }
+
+  if (threshold < 4) {
+    throw { message: 'minimum threshold should be 4' };
+  }
+
+  return ['...',  string.substring(length - (threshold - 3), length)].join('');
+}
+
 ellipsisify = {
-  center: center
+  center: center,
+  left: left
 };
 
 /* istanbul ignore next */
