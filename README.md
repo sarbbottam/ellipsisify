@@ -44,3 +44,9 @@ ellipsisify.left(string, threshold);
 ellipsisify.right(string, threshold);
 ```
 
+---
+
+## License
+
+Copyright (c) 2015, Yahoo! Inc. Copyrights licensed under the MIT License. See the accompanying LICENSE file for terms.
+
