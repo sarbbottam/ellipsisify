@@ -1,6 +1,9 @@
 ellipsisify
 ---
 
+[![build status](https://travis-ci.org/sarbbottam/ellipsisify.svg?branch=master)](https://travis-ci.org/sarbbottam/ellipsisify)
+[![coverage status](https://coveralls.io/repos/sarbbottam/ellipsisify/badge.svg?branch=master&service=github)](https://coveralls.io/github/sarbbottam/ellipsisify?branch=master)
+
 ## Demo:
 
 Please refer this [pen](http://codepen.io/sarbbottam/pen/XmKbZr?editors=001) to see it in action or to play around.
