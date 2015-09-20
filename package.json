@@ -10,9 +10,28 @@
   },
   "devDependencies": {
     "chai": "^3.2.0",
-    "coveralls": "^2.11.3",
+    "coveralls": "^2.11.4",
     "eslint": "^1.5.0",
-    "istanbul": "^0.3.17",
+    "istanbul": "^0.3.20",
     "mocha": "^2.2.5"
-  }
+  },
+  "description": "ellipsisify strings",
+  "main": "src/ellipsisify.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sarbbottam/ellipsisify.git"
+  },
+  "keywords": [
+    "ellipsisify",
+    "strings"
+  ],
+  "author": "Sarbbottam Bandyopadhyay",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sarbbottam/ellipsisify/issues"
+  },
+  "homepage": "https://github.com/sarbbottam/ellipsisify"
 }
