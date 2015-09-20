@@ -1,5 +1,8 @@
 'use strict';
 
+var MIN_THRESHOLD_CENTER = 5;
+var MIN_THRESHOLD_LEFT = 4;
+
 var ellipsisify;
 
 function center(string, threshold) {
@@ -18,8 +21,8 @@ function center(string, threshold) {
 
   mid = threshold/2;
 
-  if (threshold < 5) {
-    throw { message: 'minimum threshold should be 5' };
+  if (threshold < MIN_THRESHOLD_CENTER) {
+    throw { message: 'minimum threshold should be ' + MIN_THRESHOLD_CENTER };
   }
 
   return [string.substring(0, mid - 1), '...',  string.substring(length - (mid + 1) + 3, length)].join('');
@@ -38,8 +41,8 @@ function left(string, threshold) {
     return string;
   }
 
-  if (threshold < 4) {
-    throw { message: 'minimum threshold should be 4' };
+  if (threshold < MIN_THRESHOLD_LEFT) {
+    throw { message: 'minimum threshold should be ' + MIN_THRESHOLD_LEFT };
   }
 
   return ['...',  string.substring(length - (threshold - 3), length)].join('');
