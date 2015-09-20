@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "lint": "eslint ./src/*.js ./test/*.js",
-    "unit-test": "istanbul test _mocha -- test/*.js -R spec",
+    "unit-test": "istanbul cover _mocha -- test/*.js -R spec",
     "coverage": "istanbul check-coverage --statement 100 --branches 100 --function 100 --lines 100",
     "test": "npm run lint && npm run unit-test --coverage && npm run coverage",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
