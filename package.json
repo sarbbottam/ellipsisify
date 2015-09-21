@@ -37,7 +37,7 @@
   "homepage": "https://github.com/sarbbottam/ellipsisify",
   "config": {
     "ghooks": {
-      "pre-commit": "npm test"
+      "pre-push": "npm test"
     }
   }
 }
